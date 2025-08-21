@@ -16,7 +16,7 @@ namespace SweetAlertSharp.Converters
         {
             if (value == null || parameter == null)
             {
-                return false;
+                return Visibility.Collapsed;
             }
 
             var checkValue = value.ToString();
@@ -28,7 +28,7 @@ namespace SweetAlertSharp.Converters
         {
             if (value == null || parameter == null)
             {
-                return null;
+                return Binding.DoNothing;
             }
 
             var isVisible = (Visibility)value;
@@ -38,7 +38,7 @@ namespace SweetAlertSharp.Converters
                 return Enum.Parse(targetType, targetValue);
             }
 
-            return null;
+            return Binding.DoNothing;
         }
 
         public override object ProvideValue(IServiceProvider serviceProvider)
